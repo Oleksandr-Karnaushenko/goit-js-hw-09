@@ -4,7 +4,7 @@ const textArea = form.elements.message;
 const email = form.elements.email;
 const localStorageKey = 'feedback-form-state';
 
-// console.log(localStorage);
+console.log(localStorage);
 
 if (localStorage.length !== 0) {
   const dataFromLokalStorage = JSON.parse(
@@ -17,7 +17,7 @@ if (localStorage.length !== 0) {
 }
 
 form.addEventListener('input', event => {
-  formData[event.target.name] = event.target.value;
+  formData[event.target.name] = event.target.value.trim();
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 });
 
