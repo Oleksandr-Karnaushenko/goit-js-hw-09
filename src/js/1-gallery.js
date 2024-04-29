@@ -81,8 +81,7 @@ const imgGallery = images
       </a>
     </li>`;
   })
-  .join('');
-console.log(galleryList); //create gallery
+  .join(''); //create gallery
 
 galleryList.innerHTML = imgGallery; // add gallery
 
