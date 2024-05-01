@@ -24,9 +24,10 @@ form.addEventListener('input', event => {
 form.addEventListener('submit', event => {
   event.preventDefault();
   if (email.value !== '' && textArea.value !== '') {
-    // console.log(formData);
+    console.log(localStorage);
     localStorage.removeItem(localStorageKey);
     form.reset();
+    console.log(localStorage);
     formData.email = '';
     formData.message = '';
   } else {
