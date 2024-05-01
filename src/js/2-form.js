@@ -24,7 +24,7 @@ form.addEventListener('input', event => {
 form.addEventListener('submit', event => {
   event.preventDefault();
   if (email.value !== '' && textArea.value !== '') {
-    console.log(formData);
+    // console.log(formData);
     localStorage.removeItem(localStorageKey);
     form.reset();
     formData.email = '';
