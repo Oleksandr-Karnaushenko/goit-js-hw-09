@@ -4,16 +4,12 @@ const textArea = form.elements.message;
 const email = form.elements.email;
 const localStorageKey = 'feedback-form-state';
 
-//console.log(localStorage);
-
-if (localStorage.length !== 0) {
-  const dataFromLokalStorage = JSON.parse(
-    localStorage.getItem(localStorageKey)
-  );
-  email.value = dataFromLokalStorage.email;
-  formData.email = dataFromLokalStorage.email;
-  textArea.value = dataFromLokalStorage.message;
-  formData.message = dataFromLokalStorage.message;
+const dataFromLokalStorage = JSON.parse(localStorage.getItem(localStorageKey));
+if (dataFromLokalStorage) {
+  email.value = dataFromLokalStorage.email || '';
+  formData.email = dataFromLokalStorage.email || '';
+  textArea.value = dataFromLokalStorage.message || '';
+  formData.message = dataFromLokalStorage.message || '';
 }
 
 form.addEventListener('input', event => {
